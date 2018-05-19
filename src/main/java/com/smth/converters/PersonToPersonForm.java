@@ -15,10 +15,10 @@ public class PersonToPersonForm implements Converter<Person, PersonForm> {
         personForm.setId(person.getId());
         personForm.setFirstName(person.getFirstName());
         personForm.setLastName(person.getLastName());
-        personForm.setMiddleName(person.getMiddle_name());
+        personForm.setMiddleName(person.getMiddleName());
 //        personForm.setBirthDate(person.getBirthDate());
-        personForm.setComment(person.getComment());
-        personForm.setUpdateDate(person.getUpdateDate());
+//        personForm.setComment(person.getComment());
+//        personForm.setUpdateDate(person.getUpdateDate());
 
         return personForm;
     }

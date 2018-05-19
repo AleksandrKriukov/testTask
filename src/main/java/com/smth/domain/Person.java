@@ -1,23 +1,29 @@
 package com.smth.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Timestamp;
 
 @Entity
+@Table(name = "person", schema = "test")
 public class Person {
 
     @Id
     @GeneratedValue
+    @Column(name = "id")
     Long id;
+
+    @Column(name = "first_name")
     String first_name;
+
+    @Column(name = "last_name")
     String last_name;
+
+    @Column(name = "middle_name")
     String middle_name;
 //    Date birth_date;
-    String comment;
-    Timestamp update_date;
+//    String comment;
+//    Timestamp update_date;
 
     public Long getId() {
         return id;
@@ -43,7 +49,7 @@ public class Person {
         this.last_name = lastName;
     }
 
-    public String getMiddle_name() {
+    public String getMiddleName() {
         return middle_name;
     }
 
@@ -59,19 +65,19 @@ public class Person {
 //        this.birth_date = birthDate;
 //    }
 
-    public String getComment() {
-        return comment;
-    }
-
-    public void setComment(String comment) {
-        this.comment = comment;
-    }
-
-    public Timestamp getUpdateDate() {
-        return update_date;
-    }
-
-    public void setUpdateDate(Timestamp updateDate) {
-        this.update_date = updateDate;
-    }
+//    public String getComment() {
+//        return comment;
+//    }
+//
+//    public void setComment(String comment) {
+//        this.comment = comment;
+//    }
+//
+//    public Timestamp getUpdateDate() {
+//        return update_date;
+//    }
+//
+//    public void setUpdateDate(Timestamp updateDate) {
+//        this.update_date = updateDate;
+//    }
 }

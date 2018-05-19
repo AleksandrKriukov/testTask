@@ -16,14 +16,14 @@ public class PersonFormToPerson implements Converter<PersonForm, Person> {
 
         Person person = new Person();
         if (personForm.getId() != null && !StringUtils.isEmpty(personForm.getId())) {
-            person.setId(new Long(personForm.getId()));
+            person.setId(new Long(personForm.getId())); //TODO: check is it OK or not in case of autoincrement
         }
         person.setFirstName(personForm.getFirstName());
         person.setLastName(personForm.getLastName());
         person.setMiddleName(personForm.getMiddleName());
 //        person.setBirthDate(personForm.getBirthDate());
-        person.setComment(personForm.getComment());
-        person.setUpdateDate(personForm.getUpdateDate());
+//        person.setComment(personForm.getComment());
+//        person.setUpdateDate(personForm.getUpdateDate());
 
         return person;
     }

@@ -10,8 +10,8 @@ public class PersonForm {
     String lastName;
     String middleName;
 //    Date birthDate;
-    String comment;
-    Timestamp updateDate;
+//    String comment;
+//    Timestamp updateDate;
 
     public Long getId() {
         return id;
@@ -53,19 +53,19 @@ public class PersonForm {
 //        this.birthDate = birthDate;
 //    }
 
-    public String getComment() {
-        return comment;
-    }
-
-    public void setComment(String comment) {
-        this.comment = comment;
-    }
-
-    public Timestamp getUpdateDate() {
-        return updateDate;
-    }
-
-    public void setUpdateDate(Timestamp updateDate) {
-        this.updateDate = updateDate;
-    }
+//    public String getComment() {
+//        return comment;
+//    }
+//
+//    public void setComment(String comment) {
+//        this.comment = comment;
+//    }
+//
+//    public Timestamp getUpdateDate() {
+//        return updateDate;
+//    }
+//
+//    public void setUpdateDate(Timestamp updateDate) {
+//        this.updateDate = updateDate;
+//    }
 }

@@ -1,23 +1,17 @@
-package com.smth.domain;
+package com.smth.commands;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import java.sql.Date;
 import java.sql.Timestamp;
 
-@Entity
-public class Person {
+public class PersonForm {
 
-    @Id
-    @GeneratedValue
     Long id;
-    String first_name;
-    String last_name;
-    String middle_name;
-//    Date birth_date;
+    String firstName;
+    String lastName;
+    String middleName;
+//    Date birthDate;
     String comment;
-    Timestamp update_date;
+    Timestamp updateDate;
 
     public Long getId() {
         return id;
@@ -28,35 +22,35 @@ public class Person {
     }
 
     public String getFirstName() {
-        return first_name;
+        return firstName;
     }
 
     public void setFirstName(String firstName) {
-        this.first_name = firstName;
+        this.firstName = firstName;
     }
 
     public String getLastName() {
-        return last_name;
+        return lastName;
     }
 
     public void setLastName(String lastName) {
-        this.last_name = lastName;
+        this.lastName = lastName;
     }
 
-    public String getMiddle_name() {
-        return middle_name;
+    public String getMiddleName() {
+        return middleName;
     }
 
     public void setMiddleName(String middleName) {
-        this.middle_name = middleName;
+        this.middleName = middleName;
     }
 
 //    public Date getBirthDate() {
-//        return birth_date;
+//        return birthDate;
 //    }
 //
 //    public void setBirthDate(Date birthDate) {
-//        this.birth_date = birthDate;
+//        this.birthDate = birthDate;
 //    }
 
     public String getComment() {
@@ -68,10 +62,10 @@ public class Person {
     }
 
     public Timestamp getUpdateDate() {
-        return update_date;
+        return updateDate;
     }
 
     public void setUpdateDate(Timestamp updateDate) {
-        this.update_date = updateDate;
+        this.updateDate = updateDate;
     }
 }

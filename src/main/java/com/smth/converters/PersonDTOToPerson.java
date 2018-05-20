@@ -16,7 +16,7 @@ public class PersonDTOToPerson implements Converter<PersonDTO, Person> {
 
         Person person = new Person();
         if (personDTO.getId() != null && !StringUtils.isEmpty(personDTO.getId())) {
-            person.setId(new Long(personDTO.getId())); //TODO: check is it OK or not in case of autoincrement
+            person.setId(new Long(personDTO.getId()));
         }
         person.setFirstName(personDTO.getFirstName());
         person.setLastName(personDTO.getLastName());

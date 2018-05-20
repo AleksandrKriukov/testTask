@@ -8,10 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Service
-public class PersonServiceImpl implements PersonService{
+public class PersonServiceImpl implements PersonService {
 
     private PersonRepository personRepository;
     private PersonDTOToPerson personDTOToPerson;
@@ -34,15 +35,41 @@ public class PersonServiceImpl implements PersonService{
         return persons;
     }
 
-    @Override
-    public Person save(Person person) {
+    private Person save(Person person) {
         personRepository.save(person);
         return person;
     }
 
     @Override
     public Person save(PersonDTO personDTO) {
-        Person savedPerson = save(personDTOToPerson.convert(personDTO));
-        return savedPerson;
+        Person person = personDTOToPerson.convert(personDTO);
+        if (person.getId() == null) {
+            person.setId(getNewId());
+        }
+        return save(person);
+    }
+
+    private Long getNewId() {
+
+        List<Long> usedIds = getSortedIds();
+        for (int i = 1; i < usedIds.size() + 1; i++) {
+            if (usedIds.get(i - 1) != i) {
+                return new Long(i);
+            }
+        }
+
+        return new Long(usedIds.size() + 1);
+    }
+
+    private List<Long> getSortedIds() {
+
+        List<Person> persons = listAll();
+        List<Long> usedIds = new ArrayList<>();
+        for (Person person : persons) {
+            usedIds.add(person.getId());
+        }
+        Collections.sort(usedIds);
+
+        return usedIds;
     }
 }

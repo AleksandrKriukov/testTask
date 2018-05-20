@@ -11,7 +11,5 @@ public interface PersonService {
 
     List<Person> listAll();
 
-    Person save(Person person);
-
     Person save(PersonDTO personDTO);
 }

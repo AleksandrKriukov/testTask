@@ -9,7 +9,6 @@ import java.sql.Timestamp;
 public class Person {
 
     @Id
-    @GeneratedValue
     @Column(name = "id")
     Long id;
 

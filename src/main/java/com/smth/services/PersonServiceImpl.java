@@ -1,6 +1,7 @@
 package com.smth.services;
 
 import com.smth.converters.PersonDTOToPerson;
+import com.smth.dto.PersonDTO;
 import com.smth.entities.Person;
 import com.smth.repositories.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,5 +32,17 @@ public class PersonServiceImpl implements PersonService{
         List<Person> persons = new ArrayList<>();
         personRepository.findAll().forEach(persons::add);
         return persons;
+    }
+
+    @Override
+    public Person save(Person person) {
+        personRepository.save(person);
+        return person;
+    }
+
+    @Override
+    public Person save(PersonDTO personDTO) {
+        Person savedPerson = save(personDTOToPerson.convert(personDTO));
+        return savedPerson;
     }
 }

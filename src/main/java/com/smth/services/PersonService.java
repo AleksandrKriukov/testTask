@@ -6,5 +6,4 @@ public interface PersonService {
 
     Person getById(Long id);
 
-    ;
 }

@@ -1,6 +1,8 @@
 package com.smth.entities;
 
 import javax.persistence.*;
+import java.sql.Date;
+import java.sql.Timestamp;
 
 @Entity
 @Table(name = "person", schema = "test")
@@ -12,16 +14,22 @@ public class Person {
     Long id;
 
     @Column(name = "first_name")
-    String first_name;
+    String firstName;
 
     @Column(name = "last_name")
-    String last_name;
+    String lastName;
 
     @Column(name = "middle_name")
-    String middle_name;
-//    Date birth_date;
-//    String comment;
-//    Timestamp update_date;
+    String middleName;
+
+    @Column(name = "birth_date")
+    Date birthDate;
+
+    @Column(name = "comment")
+    String comment;
+
+    @Column(name = "update_date")
+    Timestamp updateDate;
 
     public Long getId() {
         return id;
@@ -32,50 +40,50 @@ public class Person {
     }
 
     public String getFirstName() {
-        return first_name;
+        return firstName;
     }
 
     public void setFirstName(String firstName) {
-        this.first_name = firstName;
+        this.firstName = firstName;
     }
 
     public String getLastName() {
-        return last_name;
+        return lastName;
     }
 
     public void setLastName(String lastName) {
-        this.last_name = lastName;
+        this.lastName = lastName;
     }
 
     public String getMiddleName() {
-        return middle_name;
+        return middleName;
     }
 
     public void setMiddleName(String middleName) {
-        this.middle_name = middleName;
+        this.middleName = middleName;
     }
 
-//    public Date getBirthDate() {
-//        return birth_date;
-//    }
-//
-//    public void setBirthDate(Date birthDate) {
-//        this.birth_date = birthDate;
-//    }
+    public Date getBirthDate() {
+        return birthDate;
+    }
 
-//    public String getComment() {
-//        return comment;
-//    }
-//
-//    public void setComment(String comment) {
-//        this.comment = comment;
-//    }
-//
-//    public Timestamp getUpdateDate() {
-//        return update_date;
-//    }
-//
-//    public void setUpdateDate(Timestamp updateDate) {
-//        this.update_date = updateDate;
-//    }
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    public Timestamp getUpdateDate() {
+        return updateDate;
+    }
+
+    public void setUpdateDate(Timestamp updateDate) {
+        this.updateDate = updateDate;
+    }
 }

@@ -1,14 +1,17 @@
 package com.smth.dto;
 
+import java.sql.Date;
+import java.sql.Timestamp;
+
 public class PersonDTO {
 
     Long id;
     String firstName;
     String lastName;
     String middleName;
-//    Date birthDate;
-//    String comment;
-//    Timestamp updateDate;
+    Date birthDate;
+    String comment;
+    Timestamp updateDate;
 
     public Long getId() {
         return id;
@@ -42,27 +45,27 @@ public class PersonDTO {
         this.middleName = middleName;
     }
 
-//    public Date getBirthDate() {
-//        return birthDate;
-//    }
-//
-//    public void setBirthDate(Date birthDate) {
-//        this.birthDate = birthDate;
-//    }
+    public Date getBirthDate() {
+        return birthDate;
+    }
 
-//    public String getComment() {
-//        return comment;
-//    }
-//
-//    public void setComment(String comment) {
-//        this.comment = comment;
-//    }
-//
-//    public Timestamp getUpdateDate() {
-//        return updateDate;
-//    }
-//
-//    public void setUpdateDate(Timestamp updateDate) {
-//        this.updateDate = updateDate;
-//    }
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    public Timestamp getUpdateDate() {
+        return updateDate;
+    }
+
+    public void setUpdateDate(Timestamp updateDate) {
+        this.updateDate = updateDate;
+    }
 }

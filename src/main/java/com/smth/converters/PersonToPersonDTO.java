@@ -16,9 +16,9 @@ public class PersonToPersonDTO implements Converter<Person, PersonDTO> {
         personDTO.setFirstName(person.getFirstName());
         personDTO.setLastName(person.getLastName());
         personDTO.setMiddleName(person.getMiddleName());
-//        personDTO.setBirthDate(person.getBirthDate());
-//        personDTO.setComment(person.getComment());
-//        personDTO.setUpdateDate(person.getUpdateDate());
+        personDTO.setBirthDate(person.getBirthDate());
+        personDTO.setComment(person.getComment());
+        personDTO.setUpdateDate(person.getUpdateDate());
 
         return personDTO;
     }

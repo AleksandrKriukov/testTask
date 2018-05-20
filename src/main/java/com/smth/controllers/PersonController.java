@@ -1,5 +1,6 @@
 package com.smth.controllers;
 
+import com.smth.converters.PersonToPersonDTO;
 import com.smth.dto.PersonDTO;
 import com.smth.entities.Person;
 import com.smth.services.PersonService;
@@ -49,7 +50,18 @@ public class PersonController {
         }
 
         Person savedPerson = personService.save(personDTO);
-
         return "redirect:/person/show/" + savedPerson.getId();
+    }
+
+    @RequestMapping("/person/edit/{id}")
+    public String updatePerson(@PathVariable String id, Model model) {
+        model.addAttribute("personDTO", new PersonToPersonDTO().convert(personService.getById(Long.valueOf(id))));
+        return "person/personform";
+    }
+
+    @RequestMapping("/person/delete/{id}")
+    public String deletePerson(@PathVariable String id) {
+        personService.delete(Long.valueOf(id));
+        return "redirect:/person/list";
     }
 }

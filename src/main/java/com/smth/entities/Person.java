@@ -6,12 +6,9 @@ import java.sql.Timestamp;
 
 @Entity
 @Table(name = "person", schema = "test")
-//@SequenceGenerator(name="seq", initialValue=1, allocationSize=1)
 public class Person {
 
     @Id
-//    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq")
-//    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false, unique = true)
     Long id;
 

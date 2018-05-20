@@ -44,12 +44,23 @@ public class PersonServiceImpl implements PersonService {
     public Person save(PersonDTO personDTO) {
         Person person = personDTOToPerson.convert(personDTO);
         if (person.getId() == null) {
-            person.setId(getNewId());
+            person.setId(generateId());
         }
         return save(person);
     }
 
-    private Long getNewId() {
+    @Override
+    public Person update(PersonDTO personDTO) {
+        Person updatedPerson = save(personDTOToPerson.convert(personDTO));
+        return updatedPerson;
+    }
+
+    @Override
+    public void delete(Long id) {
+        personRepository.deleteById(id);
+    }
+
+    private Long generateId() {
 
         List<Long> usedIds = getSortedIds();
         for (int i = 1; i < usedIds.size() + 1; i++) {

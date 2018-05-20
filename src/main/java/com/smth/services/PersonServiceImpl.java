@@ -6,6 +6,9 @@ import com.smth.repositories.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class PersonServiceImpl implements PersonService{
 
@@ -21,5 +24,12 @@ public class PersonServiceImpl implements PersonService{
     @Override
     public Person getById(Long id) {
         return personRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public List<Person> listAll() {
+        List<Person> persons = new ArrayList<>();
+        personRepository.findAll().forEach(persons::add);
+        return persons;
     }
 }

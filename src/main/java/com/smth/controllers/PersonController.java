@@ -17,6 +17,12 @@ public class PersonController {
         this.personService = personService;
     }
 
+    @RequestMapping({"/person/list", "/person"})
+    public String getPerson(Model model) {
+        model.addAttribute("persons", personService.listAll());
+        return "person/list";
+    }
+
     @RequestMapping("/person/show/{id}")
     public String getPerson(@PathVariable String id, Model model) {
         model.addAttribute("person", personService.getById(Long.valueOf(id)));

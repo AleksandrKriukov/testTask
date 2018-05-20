@@ -1,7 +1,7 @@
 package com.smth.services;
 
-import com.smth.converters.PersonFormToPerson;
-import com.smth.domain.Person;
+import com.smth.converters.PersonDTOToPerson;
+import com.smth.entities.Person;
 import com.smth.repositories.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,12 +10,12 @@ import org.springframework.stereotype.Service;
 public class PersonServiceImpl implements PersonService{
 
     private PersonRepository personRepository;
-    private PersonFormToPerson personFormToPerson;
+    private PersonDTOToPerson personDTOToPerson;
 
     @Autowired
-    public PersonServiceImpl(PersonRepository personRepository, PersonFormToPerson personFormToPerson) {
+    public PersonServiceImpl(PersonRepository personRepository, PersonDTOToPerson personDTOToPerson) {
         this.personRepository = personRepository;
-        this.personFormToPerson = personFormToPerson;
+        this.personDTOToPerson = personDTOToPerson;
     }
 
     @Override

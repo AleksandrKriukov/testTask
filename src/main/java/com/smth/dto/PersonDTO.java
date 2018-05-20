@@ -1,9 +1,6 @@
-package com.smth.commands;
+package com.smth.dto;
 
-import java.sql.Date;
-import java.sql.Timestamp;
-
-public class PersonForm {
+public class PersonDTO {
 
     Long id;
     String firstName;

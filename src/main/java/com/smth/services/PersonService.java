@@ -1,6 +1,6 @@
 package com.smth.services;
 
-import com.smth.domain.Person;
+import com.smth.entities.Person;
 
 public interface PersonService {
 

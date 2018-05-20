@@ -1,8 +1,6 @@
-package com.smth.domain;
+package com.smth.entities;
 
 import javax.persistence.*;
-import java.sql.Date;
-import java.sql.Timestamp;
 
 @Entity
 @Table(name = "person", schema = "test")
